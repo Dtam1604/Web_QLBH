@@ -1,0 +1,39 @@
+:root{
+  --bg: #f5f7ff;
+  --card: #ffffff;
+  --primary: #667eea;
+  --primary-700: #764ba2;
+  --muted: #6c757d;
+  --success: #4caf50;
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+
+.auth-card{width:100%;max-width:460px;background:var(--card);border-radius:16px;padding:32px 28px;box-shadow:0 20px 60px rgba(102,126,234,0.15);border:1px solid rgba(102,126,234,0.1)}
+.auth-card h2{margin:0 0 14px;color:var(--primary-700);font-size:22px}
+.auth-card p.lead{color:var(--muted);margin-bottom:18px}
+
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-weight:600;color:#123; margin-bottom:8px}
+.form-row input[type=text],.form-row input[type=password],.form-row input[type=number],.form-row input[type=email],.form-row input[type=tel]{width:100%;padding:12px 14px;border-radius:10px;border:2px solid #e0e0e0;background:#f9f9f9;transition:all 0.3s ease}
+.form-row input:focus{outline:none;border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px rgba(102,126,234,0.1)}
+
+.form-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px}
+.btn-primary{background:var(--gradient);color:#fff;padding:12px 24px;border-radius:12px;border:none;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(102,126,234,0.4);transition:all 0.3s ease}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(102,126,234,0.5)}
+.btn-primary[disabled]{opacity:.6;cursor:not-allowed;box-shadow:none}
+.link-muted{color:var(--muted);text-decoration:none;transition:color 0.2s}
+.link-muted:hover{color:var(--primary)}
+
+.small-note{font-size:13px;color:var(--muted);margin-top:10px}
+
+.password-row{position:relative}
+.toggle-password{position:absolute;right:12px;top:38px;background:transparent;border:none;color:var(--primary);cursor:pointer;font-weight:700;transition:color 0.2s}
+.toggle-password:hover{color:var(--primary-700)}
+
+.error-list{background:#fff3f3;border:1px solid #ffd6d6;padding:10px;border-radius:8px;color:#8b1a1a;margin-bottom:12px}
+.success-note{background:#ecffef;border:1px solid #c6f6d5;padding:10px;border-radius:8px;color:#0b6a3b;margin-bottom:12px}
+
+@media (max-width:520px){.auth-card{padding:20px;border-radius:12px}}

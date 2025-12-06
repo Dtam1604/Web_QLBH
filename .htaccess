@@ -1,0 +1,24 @@
+# Bảo vệ thư mục config và controllers khỏi truy cập trực tiếp
+# (Tùy chọn - chỉ bật khi cần)
+
+# Chặn truy cập trực tiếp vào thư mục config (trừ migrate scripts)
+# <FilesMatch "^(migrate|db)\.php$">
+#     Order allow,deny
+#     Allow from all
+# </FilesMatch>
+
+# Cho phép truy cập các file PHP trong controllers (cần thiết cho form actions)
+# Các file trong controllers đã được thiết kế để xử lý POST/GET requests
+
+# Bảo vệ file nhạy cảm
+<FilesMatch "\.(sql|md|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Tắt directory listing
+Options -Indexes
+
+# UTF-8 encoding
+AddDefaultCharset UTF-8
+
